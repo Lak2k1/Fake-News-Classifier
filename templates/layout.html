@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="{{ url_for('static', filename='css/index.css')}}"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        color: white;
+        margin-left: 40px;
+        font-family: "Lucida Console", "Courier New", monospace;
+      }
+      .response {
+        color: white;
+      }
+      html {
+        height: 100%;
+        background: rgb(238, 174, 202);
+        background: radial-gradient(
+          circle,
+          rgba(238, 174, 202, 1) 0%,
+          rgba(148, 187, 233, 1) 100%
+        );
+      }
+
+      #msform {
+        width: 500px;
+        margin: 50px auto;
+        text-align: center;
+        position: relative;
+      }
+      #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 20%;
+
+        position: relative;
+      }
+      #msform fieldset:not(:first-of-type) {
+        display: none;
+      }
+      #msform input,
+      #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 90%;
+        box-sizing: border-box;
+        box-sizing: content-box;
+        font-family: montserrat;
+        color: #2c3e50;
+        font-size: 13px;
+      }
+      #msform .action-button {
+        width: 100px;
+        background: #27ae60;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    </style>
+  </head>
+  <body style="">
+    <header>
+      <div class="burger" style="color: ">
+        <i class="fas fa-bars"><h1>Fake news classifier</h1></i>
+      </div>
+    </header>
+    <div style="padding-right: 10%; text-align: center">
+      <form id="msform" action="/pred" method="post">
+        <h1 style="padding-left: 30%"></h1>
+        <fieldset>
+          <h2 class="fs-title">News Tile</h2>
+          <input type="text" name="title" placeholder="type" />
+          <input
+            type="submit"
+            name="submit"
+            class="submit action-button"
+            value="Submit"
+          />
+        </fieldset>
+      </form>
+    </div>
+    <p align="center" class="response">{{pr}}</p>
+  </body>
+</html>
