@@ -16,7 +16,7 @@
 - Overall, this fake news classifier can be a useful tool for anyone who wants to quickly assess the reliability of a news article. The code for this project is available on Github for anyone who wants to use or further develop the model.
 
 ## Working model 
-# Giving the input 
+### Giving the input 
 * 15 Civilians Killed In Single US Airstrike Have Been Identified
 ![](https://github.com/Lak2k1/fkpred/blob/main/1.gif)
 
